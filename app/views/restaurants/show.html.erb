@@ -1,25 +1,25 @@
 <div class="container">
-<h1><%= @restaurant.name%></h1>
-<div class="card-category", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/1200/400)">
-<%= @restaurant.name%>
-<br>
-</div>
-<br>
-<p><strong>Category</strong>: <%= @restaurant.category.capitalize%></>
-<p><strong>Phone</strong> <%= @restaurant.phone_number%></>
-<p><strong>Address</strong>: <%= @restaurant.address%></>
-<br>
-
-<div>
-  <h3>Reviews</h3>
-  <% if @restaurant.reviews.length == 0 %>
-  <%= "No reviews submitted"%>
-  <% else%>
-<% @restaurant.reviews.each do |review|%>
-<li><%= "#{review.content.capitalize} - #{"★" * review.rating}#{"☆" * (5 - review.rating)}"%></li>
-<% end %>
-<% end %>
-</div>
-<%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-warning mt-3" %>
-<br><%= link_to "Home", restaurants_path, class: "btn btn-dark mt-3" %>
+  <h1><%= @restaurant.name%></h1>
+  <div class="card-category", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/1200/400)">
+    <%= @restaurant.name%>
+    <br>
+  </div>
+  <br>
+  <p><strong>Category</strong>: <%= @restaurant.category.capitalize%></>
+  <p><strong>Phone</strong> <%= @restaurant.phone_number%></>
+  <p><strong>Address</strong>: <%= @restaurant.address%></>
+  <br>
+  <div>
+    <h3>Reviews</h3>
+    <% if @restaurant.reviews.length == 0 %>
+      <%= "No reviews submitted"%>
+    <% else%>
+      <% @restaurant.reviews.each do |review|%>
+        <li><%= "#{review.content.capitalize} - #{"★" * review.rating}#{"☆" * (5 - review.rating)}"%></li>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-warning mt-3" %>
+  <br>
+  <%= link_to "Home", restaurants_path, class: "btn btn-dark mt-3" %>
 </div>

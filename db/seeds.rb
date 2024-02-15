@@ -18,6 +18,12 @@ categories = %w[chinese italian japanese french belgian]
     name: name,
     address: address,
     category: category,
-    phone_number: phone_number
+    phone_number: phone_number,
   )
+end
+
+10.times do
+  Review.create(rating: 4,
+                content: "Hello",
+                restaurant_id: Restaurant.first.id)
 end
