@@ -48,6 +48,17 @@
   text-decoration: underline;
 }
 
+.navbar-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: black;
+  font: aqua;
+  padding-inline: 30px;
+}
+
 /* Media Query for screens narrower than 768px (adjust as needed) */
 @media (max-width: 768px) {
   .cards {

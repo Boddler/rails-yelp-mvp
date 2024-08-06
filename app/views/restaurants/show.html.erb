@@ -19,7 +19,13 @@
       <% end %>
     <% end %>
   </div>
-  <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: "btn btn-warning mt-3" %>
   <br>
+  <div class="w-25">
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :rating, collection: 0..5 %>
+      <%= f.input :content%>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
   <%= link_to "Home", restaurants_path, class: "btn btn-dark mt-3" %>
 </div>

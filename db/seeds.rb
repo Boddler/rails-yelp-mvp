@@ -22,8 +22,12 @@ categories = %w[chinese italian japanese french belgian]
   )
 end
 
-10.times do
-  Review.create(rating: 4,
-                content: "Hello",
-                restaurant_id: Restaurant.first.id)
+45.times do
+  rating = (1..5).to_a.sample
+  content = Faker::Lorem.paragraph(sentence_count: 2)
+  id = Restaurant.all.sample.id
+  Review.create(rating: rating,
+                content: content,
+                restaurant_id: id)
+  puts "Rating: #{rating} \n Content: #{content} \n Restaurant: #{Restaurant.find(id).name}"
 end
